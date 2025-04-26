@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Routes
 const notesRoutes = require('./routes/notes');
-app.use('https://practice-backend-kappa.vercel.app//api/notes', notesRoutes);
+app.use('https://practice-backend-kappa.vercel.app/api/notes', notesRoutes);
 
 // Export the app for Vercel
 module.exports = app;
