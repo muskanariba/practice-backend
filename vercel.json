@@ -1,0 +1,14 @@
+{
+    "headers": [
+      {
+        "source": "/api/notes",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "https://practice-frontend-one.vercel.app"
+          }
+        ]
+      }
+    ]
+  }
+  
