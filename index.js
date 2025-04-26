@@ -5,19 +5,20 @@ require('dotenv').config();
 
 const app = express();
 
+// Enable CORS
 app.use(cors({
-  origin: '*',   
+  origin: '*', // Allow all origins for development
 }));
 app.use(express.json());
 
-// MongoDB Connection
+// MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected!'))
-  .catch(err => console.log(err));
+  .catch(err => console.log('MongoDB connection error:', err));
 
 // Routes
 const notesRoutes = require('./routes/notes');
 app.use('/api/notes', notesRoutes);
 
-// 🚫 app.listen hata do
-module.exports = app;   // 👈 Yeh export karna hai Vercel ke liye
+// Export the app for Vercel
+module.exports = app;
